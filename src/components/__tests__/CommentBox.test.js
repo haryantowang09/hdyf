@@ -17,9 +17,9 @@ afterEach(() => {
   component.unmount();
 });
 
-it('has a text area and a button', () => {
+it('has a text area and two buttons', () => {
   expect(component.find("textarea").length).toEqual(1);
-  expect(component.find("button").length).toEqual(1);
+  expect(component.find("button").length).toEqual(2);
 });
 
 describe('the text area', () => {
@@ -35,7 +35,7 @@ describe('the text area', () => {
   });
   
   it('when form is submitted, text area gets emptied', () => {
-    component.find("button").simulate('submit');
+    component.find("form").simulate('submit');
     component.update();
     expect(component.find("textarea").prop('value')).toEqual('');
   });

@@ -1,9 +1,10 @@
 {
   "name": "howdoyoufeel",
   "version": "0.1.0",
-  "description": "A simple app for you to put how on what are you feeling.",
+  "description": "an app asking how do you feel",
   "author": "haryantowang09@gmail.com",
   "private": true,
+  "homepage": "https://github.com/haryantowang09/hdyf",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

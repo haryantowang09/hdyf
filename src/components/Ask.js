@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styled from'styled-components';
+import styled from 'styled-components';
 
 const Main = styled.main`
   display: flex;
@@ -18,7 +18,6 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   margin-top: 1em;
-
 `;
 
 const Button = styled.button`
@@ -42,32 +41,29 @@ const TextArea = styled.textarea`
 class Ask extends Component {
   state = { comment: '...' };
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({ comment: event.target.value });
-  }
+  };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     // call action
     this.setState({ comment: '' });
-  }
+  };
 
-  render()  {
+  render() {
     return (
       <Main>
         <Container>
           <h1>Hi, how do you feel ?</h1>
           <Form onSubmit={this.handleSubmit}>
-            <TextArea
-              value={this.state.comment}
-              onChange={this.handleChange}
-            />
+            <TextArea value={this.state.comment} onChange={this.handleChange} />
             <Button>Send</Button>
           </Form>
         </Container>
       </Main>
     );
   }
-};
+}
 
 export default Ask;

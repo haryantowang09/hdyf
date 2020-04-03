@@ -6,11 +6,11 @@ import requireAuth from 'components/requireAuth';
 class CommentBox extends Component {
   state = { comment: '' };
 
-  handleChange = event => {
+  handleChange = (event) => {
     this.setState({ comment: event.target.value });
   };
 
-  handleSubmit = event => {
+  handleSubmit = (event) => {
     event.preventDefault();
     this.props.saveComment(this.state.comment);
     this.setState({ comment: '' });
@@ -26,10 +26,12 @@ class CommentBox extends Component {
             <button>Submit Content</button>
           </div>
         </form>
-        <button className="fetch-comments" onClick={this.props.fetchComments}>Fetch Comments</button>
+        <button className="fetch-comments" onClick={this.props.fetchComments}>
+          Fetch Comments
+        </button>
       </div>
     );
   }
-};
+}
 
 export default connect(null, actions)(requireAuth(CommentBox));

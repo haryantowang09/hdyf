@@ -21,13 +21,13 @@ const Nav = styled.nav`
 class App extends Component {
   renderButton() {
     if (this.props.auth) {
-     return (
-       <button onClick={() => this.props.changeAuth(false)}>Sign Out</button>
-     )
+      return (
+        <button onClick={() => this.props.changeAuth(false)}>Sign Out</button>
+      );
     } else {
       return (
         <button onClick={() => this.props.changeAuth(true)}>Sign In</button>
-      )
+      );
     }
   }
 
@@ -43,11 +43,9 @@ class App extends Component {
         <div>
           <Link to="/ask">Ask me</Link>
         </div>
-        <div>
-          {this.renderButton()}
-        </div>
+        <div>{this.renderButton()}</div>
       </Nav>
-    )
+    );
   }
 
   render() {
@@ -60,10 +58,10 @@ class App extends Component {
       </div>
     );
   }
-};
+}
 
 function mapStateToProps(state) {
-  return { auth: state.auth }
+  return { auth: state.auth };
 }
 
 export default connect(mapStateToProps, actions)(App);

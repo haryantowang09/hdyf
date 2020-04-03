@@ -4,7 +4,6 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Root from 'Root';
 import App from 'components/App';
 import Ask from 'components/Ask';
-
 import 'assets/styles/reset.css';
 
 ReactDOM.render(

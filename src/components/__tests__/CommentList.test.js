@@ -7,7 +7,7 @@ let component;
 
 beforeEach(() => {
   const initialState = {
-    comments: ['Comment 1', 'Comment 2']
+    comments: ['Comment 1', 'Comment 2'],
   };
 
   component = mount(
@@ -21,7 +21,7 @@ afterEach(() => {
   component.unmount();
 });
 
-it('creates one \'li\' element per comment', () => {
+it("creates one 'li' element per comment", () => {
   expect(component.find('li').length).toEqual(2);
 });
 

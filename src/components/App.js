@@ -5,8 +5,6 @@ import styled from 'styled-components';
 
 import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
-import Ask from 'components/Ask';
-
 import * as actions from 'actions';
 
 const Nav = styled.nav`
@@ -40,9 +38,6 @@ class App extends Component {
         <div>
           <Link to="/post">Post a Comment</Link>
         </div>
-        <div>
-          <Link to="/ask">Ask me</Link>
-        </div>
         <div>{this.renderButton()}</div>
       </Nav>
     );
@@ -52,7 +47,6 @@ class App extends Component {
     return (
       <div>
         {this.renderHeader()}
-        <Route path="/ask" component={Ask} />
         <Route path="/post" component={CommentBox} />
         <Route path="/" exact component={CommentList} />
       </div>

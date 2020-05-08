@@ -9,3 +9,7 @@ body * {
   color:            unset;
   text-decoration:  unset;
 }
+
+html, body {
+  height: 100vh;
+}

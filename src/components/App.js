@@ -16,6 +16,11 @@ const Nav = styled.nav`
   padding: 0.5em 0;
 `;
 
+const BlogQuote = styled.blockquote`
+  font-style: Italic;
+  color: #666666;
+`;
+
 class App extends Component {
   renderButton() {
     if (this.props.auth) {
@@ -45,11 +50,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <main className="main-layout">
         {this.renderHeader()}
         <Route path="/post" component={CommentBox} />
         <Route path="/" exact component={CommentList} />
-      </div>
+        <BlogQuote>No one here around me can help me feel totally save. I guess, there never was. - Wang</BlogQuote>
+      </main>
     );
   }
 }

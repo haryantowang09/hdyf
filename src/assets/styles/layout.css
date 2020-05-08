@@ -1,0 +1,14 @@
+.main-layout {
+  display: grid;
+  grid-template-columns: 25% [start]1fr[end] 25%;
+}
+
+.main-layout * {
+  grid-column: start/end;
+}
+
+@media screen and (max-width: 425px) {
+  .main-layout {
+    grid-template-columns: 1em [start]1fr[end] 1em;
+  }
+}

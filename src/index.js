@@ -4,6 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Root from 'Root';
 import App from 'components/App';
 import 'assets/styles/reset.css';
+import 'assets/styles/layout.css';
 
 ReactDOM.render(
   <Root>

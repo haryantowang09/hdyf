@@ -54,7 +54,10 @@ class App extends Component {
         {this.renderHeader()}
         <Route path="/post" component={CommentBox} />
         <Route path="/" exact component={CommentList} />
-        <BlogQuote>No one here around me can help me feel totally save. I guess, there never was. - Wang</BlogQuote>
+        <BlogQuote>
+          No one here around me can help me feel totally save. I guess, there
+          never was. - Wang
+        </BlogQuote>
       </main>
     );
   }

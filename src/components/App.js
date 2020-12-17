@@ -58,6 +58,10 @@ class App extends Component {
           No one here around me can help me feel totally save. I guess, there
           never was. - Wang
         </BlogQuote>
+        <input
+          type="tel"
+          autoFocus
+        />
       </main>
     );
   }

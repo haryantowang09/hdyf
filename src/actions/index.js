@@ -3,7 +3,6 @@ import {
   SAVE_COMMENT,
   FETCH_COMMENTS,
   CHANGE_AUTH,
-  SAVE_FEEL_COMMENT,
 } from 'actions/types';
 
 export function saveComment(comment) {
@@ -25,12 +24,5 @@ export function changeAuth(isLoggedIn) {
   return {
     type: CHANGE_AUTH,
     payload: isLoggedIn,
-  };
-}
-
-export function saveFeelsComment(feelsComment) {
-  return {
-    type: SAVE_FEEL_COMMENT,
-    payload: feelsComment,
   };
 }

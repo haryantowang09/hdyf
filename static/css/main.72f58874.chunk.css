@@ -1,2 +1,0 @@
-:root{font:20px/1.2 "Roboto",sans-serif}body,body *{margin:unset;box-sizing:unset;padding:unset;font-size:unset;color:unset;text-decoration:unset}body,html{height:100vh}.main-layout{display:grid;grid-template-columns:25% [start]1fr[end] 25%}.main-layout *{grid-column:start/end}@media screen and (max-width:425px){.main-layout{grid-template-columns:1em [start]1fr[end] 1em}}
-/*# sourceMappingURL=main.72f58874.chunk.css.map */

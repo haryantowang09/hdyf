@@ -7,8 +7,6 @@ import styled from 'styled-components';
 const Main = styled.main`
   display: flex;
   justify-content: center;
-  background-color: #f5f5f5;
-  height: calc(100vh - 37px);
 `;
 
 const Container = styled.div`
@@ -42,7 +40,7 @@ const TextArea = styled.textarea`
 `;
 
 class CommentBox extends Component {
-  state = { comment: '...' };
+  state = { comment: '' };
 
   handleChange = (event) => {
     this.setState({ comment: event.target.value });
@@ -58,9 +56,12 @@ class CommentBox extends Component {
     return (
       <Main>
         <Container>
-          <h1>Hi, how do you feel ?</h1>
+          <h1>Hi, What do you want to comment today ?</h1>
           <Form onSubmit={this.handleSubmit}>
-            <TextArea value={this.state.comment} onChange={this.handleChange} />
+            <TextArea
+              placeholder="Input here..."
+              value={this.state.comment}
+              onChange={this.handleChange} />
             <Button>Send</Button>
           </Form>
         </Container>

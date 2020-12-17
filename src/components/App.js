@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import { Route, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
@@ -7,13 +7,27 @@ import CommentBox from 'components/CommentBox';
 import CommentList from 'components/CommentList';
 import * as actions from 'actions';
 
-const Nav = styled.nav`
+const ParentNav = styled.nav`
   width: 100%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-top: 1px solid pink;
+`;
+
+const HorizontalNav = styled.nav`
   display: flex;
   justify-content: space-around;
-  font-size: 0.8em;
-  border-bottom: 1px solid pink;
   padding: 0.5em 0;
+  border-top: 1px solid pink;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em 1em;
 `;
 
 const BlogQuote = styled.blockquote`
@@ -34,35 +48,37 @@ class App extends Component {
     }
   }
 
-  renderHeader() {
+  renderNav() {
     return (
-      <Nav>
-        <div>
-          <Link to="/">Home</Link>
-        </div>
-        <div>
-          <Link to="/post">Post a Comment</Link>
-        </div>
-        <div>{this.renderButton()}</div>
-      </Nav>
+      <ParentNav>
+        <Nav>
+          <BlogQuote>
+            Everyone failed but it is when you stop. - Wang
+          </BlogQuote>
+        </Nav>
+        <HorizontalNav>
+          <div>
+            <Link to="/">Home</Link>
+          </div>
+          <div>
+            <Link to="/post">Post a Comment</Link>
+          </div>
+          <div>{this.renderButton()}</div>
+        </HorizontalNav>
+      </ParentNav>
     );
   }
 
   render() {
     return (
-      <main className="main-layout">
-        {this.renderHeader()}
-        <Route path="/post" component={CommentBox} />
-        <Route path="/" exact component={CommentList} />
-        <BlogQuote>
-          No one here around me can help me feel totally save. I guess, there
-          never was. - Wang
-        </BlogQuote>
-        <input
-          type="tel"
-          autoFocus
-        />
-      </main>
+      <Fragment>
+        <main className="grid-layout">
+          <Route path="/post" component={CommentBox} />
+          <Route path="/" exact component={CommentList} />
+        </main>
+        {this.renderNav()}
+      </Fragment>
+      
     );
   }
 }
